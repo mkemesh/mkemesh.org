@@ -1,8 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=0.75; maximum-scale=0.75; minimum-scale=0.75; user-scalable=0;" />
+<title>Milwaukee Mesh Cooperative</title>
+<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+	<link rel="stylesheet" type="text/css" href="css/mke-mesh.css">
 </head>
+
 <body>
-    <h1>Coming Soon!</h1>
+	<header class="header">
+  <a href="" class="logo"><img class="header_logo" src="img/MKE_Mesh_logo_wide.gif" width="848" height="186" alt=""/></a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#calendar">Calendar</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</header>
+
+	<div id="mission" class="spacer">...</div>
+	<div class="hex_network_tile"></div>
+
+	<div class="center_1"><p class="section_title">Mission</p><p>We live in a digital age. The internet has forever changed the way we work, socialize, organize and live. Access to the internet has become a basic necessity, which has led to the formation of monopolies and cartels among the corporate internet service providers (ISPs.)</p><p id="faq">
+		The Milwaukee Mesh Network seeks to make the internet more accessible, more affordable and subsequently faster, by democratizing the process of distribution. We are a distributive, consumer and worker-owned internet service cooperative.</p>
+		<p>We intend to create a neutral internet that is accessible to all. Long term, the Milwaukee Mesh Cooperative will be a vital part of a larger solidarity economy that empowers working people.</p>
+	</div>
+
+	<div class="center_2"><p class="section_title_2">FAQ</p>
+		<br>
+		<div class="Q_A">
+			<div class="question">What is a mesh network?</div>
+			<div class="answer">A mesh network will vary in scope and execution according to the needs and resources of the community creating it. Broadly speaking, mesh network members mount wireless routers on a rooftop or balcony to create a "node" in the network which can connect to the network's hub. These personal routers then connect to other nodes, creating a distributive network.</div>
+			<div class="hex_network_tile"></div>
+		</div>
+		<br>
+
+		<div class="Q_A">
+		<div class="question">Why join the Milwaukee Mesh Cooperative?</div>
+			<div class="answer">Members of a distributive mesh network enjoy many tehnological and social benefits.<br>
+				<ul>
+					<li>The Milwaukee Mesh Cooperative is inherently net neutral. With no commercial Internet Service Provider looking to profit from your browsing habits, the network treats all data equally, without throttling or commodifying your traffic to any site. This in turn protects the privacy and security of all data sent over the network.</li>
+					<li>For similar reasons, mesh networks are less expensive than commercial internet access, while still providing speeds which are competitive, if not faster than typical commercial service.</li>
+					<li>Mesh networks are structurally more robust than a commercial ISP, since there is no single point of failure which can shut down the whole network.</li>
+					<li>Mesh networks build community. The technology shows the strength of non-hierarchical systems in practice, and the Milwaukee Mesh Cooperative particularly champions popular democracy in its structure, giving all members a means to directly participate in the cooperative's governance.</li>
+				</ul>
+				<div class="community_network_tile"></div>
+				</div>
+	</div>
+
+	</div>
+	<div id="calendar" class="center_1"><br><p class="section_title">Calendar</p>
+		<p>Here you can find an updated calendar of Milwaukee Mesh  Cooperative meetings and events.</p><p class="calendar_placeholder"><img src="img/calendar_placeholder.jpg" alt="calendar placeholder image"/></p>
+	</div>
+<div id="contact" class="center_3"><br><p class="section_title_3">Contact</p>
+	<p>To learn more about the Milwaukee Mesh Cooperative, please use the contact information below!</p><p><img class = "contact_placeholder" src="img/contact_placeholder.jpg" alt="contact form placeholder"/></p>
+	</div>
+
+	<div class="bottom"><span id="current_year"></span> - Milwaukee Mesh Cooperative | <a href="#">privacy policy</a> | <a href="#">terms and conditions</a> | <a href="#">MKE solidarity economy</a> </div>
+
 </body>
+	<script>document.getElementById("current_year").innerHTML = new Date().getFullYear();</script>
 </html>
