@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
-html { 
+html {
   background-image: linear-gradient(#fff, #01b6d3);
 background-size: 100% 100%;
 	width: 100%;
@@ -42,7 +42,7 @@ a {
 .calendar_placeholder{
 	width:70%;
 	margin: auto;
-	
+
 }
 
 .calendar_placeholder img{
@@ -201,7 +201,7 @@ a {
 }
 
 .center_2{
-	
+
 	width:100%;
 	margin: auto;
 	text-align: left;
@@ -327,16 +327,16 @@ a {
 /* 48em = 768px */
 
 @media (min-width: 48em) {
-	
+
 	.header_logo{
 		width:20vw;
 		height:auto;
 	}
-	
+
 	.header{
 		height:8vw;
 	}
-	
+
   .header li {
     float: left;
   }
@@ -347,13 +347,13 @@ a {
     clear: none;
     float: right;
     max-height: 5vw;
-	margin-top:1.25vw;
-	  
+	  margin-top:1.25vw;
+
   }
   .header .menu-icon {
     display: none !important;
   }
-	
+
 	.spacer{
 		height:8vw;
 	}
