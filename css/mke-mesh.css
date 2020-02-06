@@ -22,6 +22,42 @@ a {
 	font-weight: 600;
 }
 
+.contact_form{
+	width:70%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1vw;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 3px 4px 4px 0 rgba(0,0,0,0.35);
+	padding: 20px;
+
+}
+
+input{
+	padding: 5px;
+	margin-bottom: 20px;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	width:98%;
+}
+
+textarea{
+	padding: 5px;
+	margin-bottom: 20px;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	width:98% !important;
+}
+
+.submit_button{
+	width: 10vw;
+	padding: 10px;
+	color: white;
+	font-weight: 600;
+	background-color: #141864;
+}
+
 .hex_network_tile{
 	margin-top:0.25vw;
 	background-repeat: repeat-x;
@@ -347,8 +383,7 @@ a {
     clear: none;
     float: right;
     max-height: 5vw;
-	  margin-top:1.25vw;
-
+	margin-top:1.25vw;
   }
   .header .menu-icon {
     display: none !important;

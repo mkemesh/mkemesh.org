@@ -18,7 +18,7 @@
     <li><a href="#mission">Mission</a></li>
     <li><a href="#faq">FAQ</a></li>
     <!-- <li><a href="#calendar">Calendar</a></li> -->
-    <!-- <li><a href="#contact">Contact</a></li> -->
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </header>
 
@@ -59,13 +59,18 @@
 
 	<div id="contact" class="center_3"><br>
 		<p class="section_title_3">Contact</p>
-		<p>To learn more about the Milwaukee Mesh Cooperative, please use the contact information below!</p>
-		<p>
+		<p>For media inquiries, general questions, or to subscribe for updates, please use the contact form below!</p>
+		<div class="contact_form">
+
+			<div>Your Name<a style="color:#01b6d3;">*</a>
 			<input type="text" id="name" placeholder="Name" name="name" required minlength="4" size="30"><br>
-			<input type="email" id="email" placeholder="Email" size="30"><br>
-			<textarea id="message" placeholder="Message" style="width: 400px; height: 200px;"></textarea><br>
-			<input type="button" id="send" value="Send">
-		</p>
+			E-mail address<a style="color:#01b6d3;">*</a>
+			<input type="email" required="required" id="email" placeholder="Email" size="30"><br>
+
+			<textarea id="message" placeholder="Message" style="width: 400px; height: 200px;"></textarea>
+			<div style="font-size: 0.75em; margin-top: -18px; margin-bottom: 5px; color:#01b6d3;">* required field</div>
+			<input type="button" class="submit_button" id="send" value="Send"></div>
+		</div>
 	</div>
 
 
