@@ -4,7 +4,8 @@ button.addEventListener('click',
 	sendContactEMail(
 		document.querySelector('#name').value,
 		document.querySelector('#email').value,
-		document.querySelector('#message').value
+		document.querySelector('#message').value,
+		function (e) { console.log(e) }
 	)
 );
 
