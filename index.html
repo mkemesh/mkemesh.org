@@ -8,22 +8,22 @@
 <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
 	<link rel="stylesheet" type="text/css" href="css/mke-mesh.css">
 
-<link href='modules/fullcalendar/core/main.css' rel='stylesheet' />
-<link href='modules/fullcalendar/daygrid/main.css' rel='stylesheet' />
+<link href='modules/fullcalendar/packages/core/main.css' rel='stylesheet' />
+<link href='modules/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
 
-<script src='modules/fullcalendar/core/main.js'></script>
-<script src='modules/fullcalendar/daygrid/main.js'></script>
+<script src='modules/fullcalendar/packages/core/main.js'></script>
+<script src='modules/fullcalendar/packages/daygrid/main.js'></script>
 	
 <script>
 
       document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
+        var calendarEl = document.getElementById('fullcalendar');
 
-        var calendar = new FullCalendar.Calendar(calendarEl, {
+        var fullcalendar = new FullCalendar.Calendar(calendarEl, {
           plugins: [ 'dayGrid' ]
         });
 
-        calendar.render();
+        fullcalendar.render();
       });
 
 </script>
@@ -74,12 +74,13 @@
 	</div>
 
 	</div>
-	<div id="calendar" class="center_1"><br><p class="section_title">Calendar</p>
-		<p>Here you can find an updated calendar of Milwaukee Mesh  Cooperative meetings and events.</p>		
+	<div id="calendar" class="center_3"><br><p class="section_title_3">Calendar</p>
+		<p>Here you can find an updated calendar of Milwaukee Mesh  Cooperative meetings and events.</p>
+		<p id="fullcalendar" class="calendar"></p>
 	</div>
 
-	<div id="contact" class="center_3"><br>
-		<p class="section_title_3">Contact</p>
+	<div id="contact" class="center_4"><br>
+		<p class="section_title_4">Contact</p>
 		<p>For media inquiries, general questions, or to subscribe for updates, please use the contact form below!</p>
 		<div class="contact_form">
 
