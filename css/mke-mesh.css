@@ -275,7 +275,7 @@ textarea{
 	margin-top: 1vw;
 	margin-right: auto;
 	margin-bottom: 0vw;
-	margin-left: auto;	
+	margin-left: auto;
 	width:70%;
 }
 
@@ -353,7 +353,7 @@ textarea{
 }
 
 .answer li:before {
-	content: 'ðŸ‘';
+	content: '👍';
 	margin-left: -30px;
 	margin-right: 10px;
 }
