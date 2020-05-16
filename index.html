@@ -1,32 +1,24 @@
 <!doctype html>
-<html>
+<html lang="en-US">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width; initial-scale=0.75; maximum-scale=0.75; minimum-scale=0.75; user-scalable=0;" />
-<title>Milwaukee Mesh Cooperative</title>
-<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=0.75; maximum-scale=0.75; minimum-scale=0.75; user-scalable=0;" />
+
+	<title>Milwaukee Mesh Cooperative</title>
+
+	<!-- Load custom files. -->
+	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
 	<link rel="stylesheet" type="text/css" href="css/mke-mesh.css">
 
-<link href='modules/fullcalendar/packages/core/main.css' rel='stylesheet' />
-<link href='modules/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
+	<!-- Load calendar styles. -->
+	<link href='modules/fullcalendar/packages/core/main.css' rel='stylesheet' />
+	<link href='modules/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
 
-<script src='modules/fullcalendar/packages/core/main.js'></script>
-<script src='modules/fullcalendar/packages/daygrid/main.js'></script>
-
-<!-- <script>
-
-      document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('fullcalendar');
-
-        var fullcalendar = new FullCalendar.Calendar(calendarEl, {
-          plugins: [ 'dayGrid' ]
-        });
-
-        fullcalendar.render();
-      });
-
-</script> -->
+	<!-- Load JavaScript one at a time, after the DOM loads, using `defer`-->
+	<script defer src='modules/fullcalendar/packages/core/main.js'></script>
+	<script defer src='modules/fullcalendar/packages/daygrid/main.js'></script>
+	<script defer type="text/javascript" src="js/client.js"></script>
 
 </head>
 
@@ -76,8 +68,8 @@
 	</div>
 	<div id="calendar" class="center_3"><br><p class="section_title_3">Calendar</p>
 		<p>Here you can find an updated calendar of Milwaukee Mesh  Cooperative meetings and events.</p>
-		<p><iframe class="calendar" src="https://calendar.google.com/calendar/embed?src=lnc9kcii9j5knmnki8l4re56ts%40group.calendar.google.com&ctz=America%2FChicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe></p>
-		<!-- <p id="fullcalendar" class="calendar"></p> -->
+		<!-- <p><iframe class="calendar" src="https://calendar.google.com/calendar/embed?src=lnc9kcii9j5knmnki8l4re56ts%40group.calendar.google.com&ctz=America%2FChicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe></p> -->
+		<p id="fullcalendar" class="calendar"></p>
 	</div>
 
 	<div id="contact" class="center_4"><br>
@@ -96,12 +88,10 @@
 		</div>
 	</div>
 
-
+	<!-- `current_year` is initialized in client.js -->
 	<div class="bottom"><span id="current_year"></span> - Milwaukee Mesh Cooperative
 		<!-- | <a href="#">privacy policy</a> | <a href="#">terms and conditions</a> | <a href="#">MKE solidarity economy</a>  -->
 	</div>
 
 </body>
-	<script>document.getElementById("current_year").innerHTML = new Date().getFullYear();</script>
-	<script type="text/javascript" src="js/client.js"></script>
 </html>
