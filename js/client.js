@@ -7,6 +7,9 @@ const button = document.querySelector('#send');
 button.addEventListener('click', sendContactEmail);
 const http = new XMLHttpRequest();
 let messageLabel = document.querySelector(`#requestStatus`);
+const contactName = document.querySelector('#name');
+const contactEmail = document.querySelector('#email');
+const contactMessage = document.querySelector('#message');
 
 // Send XMLHttpRequest.
 function sendRequest(method, endPoint, body) {
@@ -28,17 +31,13 @@ function processResponse(e) {
 
 // Get values and send email.
 function sendContactEmail() {
-	const contactName = document.querySelector('#name').value.trim();
-	const contactEmail = document.querySelector('#email').value.trim();
-	const contactMessage = document.querySelector('#message').value.trim();
-
 	if (validateInput()) {
 		messageLabel.innerHTML = `Sending message...`;
 		const mailEndpoint = "https://api.mkemesh.org/v1/contact-email";
 		const payload = {
-			name: contactName,
-			email: contactEmail,
-			message: contactMessage
+			name: contactName.value.trim(),
+			email: contactEmail.value.trim(),
+			message: contactMessage.value.trim()
 		};
 		sendRequest("POST", mailEndpoint, JSON.stringify(payload));
 	} else {
@@ -50,17 +49,17 @@ function sendContactEmail() {
 
 // Use any algorithms here to check that contact form input is valid.
 function validateInput() {
-	if (document.querySelector('#name').value.trim().length == 0 ) return false;
-	if (document.querySelector('#email').value.trim().length == 0 ) return false;
-	if (document.querySelector('#message').value.trim().length == 0 ) return false;
+	if (contactName.value.trim().length == 0 ) return false;
+	if (contactEmail.value.trim().length == 0 ) return false;
+	if (contactMessage.value.trim().length == 0 ) return false;
 
 	return true;
 }
 
 function clearForm() {
-	document.querySelector('#name').value = ``;
-	document.querySelector('#email').value = ``;
-	document.querySelector('#message').value = ``;
+	contactName.value = ``;
+	contactEmail.value = ``;
+	contactMessage.value = ``;
 	document.querySelector(`#send`).style.visibility = `hidden`; // Hide button
 }
 
