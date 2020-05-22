@@ -4,33 +4,64 @@ document.getElementById("current_year").innerHTML = new Date().getFullYear();
 
 // <input> has automatic event handlers. Get instance and set Event Handler.
 const button = document.querySelector('#send');
+button.addEventListener('click', sendContactEmail);
+const http = new XMLHttpRequest();
+let messageLabel = document.querySelector(`#requestStatus`);
 
-button.addEventListener('click',
-	sendContactEMail(
-		document.querySelector('#name').value,
-		document.querySelector('#email').value,
-		document.querySelector('#message').value,
-		function (e) { console.log(e) }
-	)
-);
-
-function sendRequest(method, endPoint, body, callback) {
-	let http = new XMLHttpRequest();
-	http.open(method, endPoint);
+// Send XMLHttpRequest.
+function sendRequest(method, endPoint, body) {
+	http.open(method, endPoint, true);
 	http.send(body);
-	http.onreadystatechange = e => {
-		callback(e);
-	};
+	http.onreadystatechange = processResponse;
 }
 
-function sendContactEMail(name, email, message, callback) {
-	let mailEndpoint = "https://api.mkemesh.org/v1/contact-email";
-	let payload = {
-		name: name,
-		email: email,
-		message: message
-	};
-	this.sendRequest("POST", mailEndpoint, JSON.stringify(payload), callback);
+// Process XMLHttpRequest.
+function processResponse(e) {
+	// readystate 4 = done
+	// status 200 = success
+    if (http.readyState == 4 && http.status == 200) {
+		let response = JSON.parse(http.responseText);
+		messageLabel.innerHTML = `Message sent!\nForm cleared for privacy🤘`;
+		clearForm();
+    }
+}
+
+// Get values and send email.
+function sendContactEmail() {
+	const contactName = document.querySelector('#name').value.trim();
+	const contactEmail = document.querySelector('#email').value.trim();
+	const contactMessage = document.querySelector('#message').value.trim();
+
+	if (validateInput()) {
+		messageLabel.innerHTML = `Sending message...`;
+		const mailEndpoint = "https://api.mkemesh.org/v1/contact-email";
+		const payload = {
+			name: contactName,
+			email: contactEmail,
+			message: contactMessage
+		};
+		sendRequest("POST", mailEndpoint, JSON.stringify(payload));
+	} else {
+		if(!validateInput()) {
+			messageLabel.innerHTML = `Need more info!😱`;
+		}
+	}
+}
+
+// Use any algorithms here to check that contact form input is valid.
+function validateInput() {
+	if (document.querySelector('#name').value.trim().length == 0 ) return false;
+	if (document.querySelector('#email').value.trim().length == 0 ) return false;
+	if (document.querySelector('#message').value.trim().length == 0 ) return false;
+
+	return true;
+}
+
+function clearForm() {
+	document.querySelector('#name').value = ``;
+	document.querySelector('#email').value = ``;
+	document.querySelector('#message').value = ``;
+	document.querySelector(`#send`).style.visibility = `hidden`; // Hide button
 }
 
 function insertCalendar() {

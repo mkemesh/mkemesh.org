@@ -83,17 +83,17 @@
 	<div id="contact" class="center_4"><br>
 		<p class="section_title_4">Contact</p>
 		<p>For media inquiries, general questions, or to subscribe for updates, please use the contact form below!</p>
-		<div class="contact_form">
-
+		<form class="contact_form">
 			<div>Your Name<a style="color:#01b6d3;">*</a>
-			<input type="text" id="name" placeholder="Name" name="name" required minlength="4" size="30"><br>
+			<input id="name" type="text" placeholder="Name" name="name" required minlength="4" size="30"><br>
 			E-mail address<a style="color:#01b6d3;">*</a>
-			<input type="email" required="required" id="email" placeholder="Email" size="30"><br>
+			<input id="email" type="email" required="required"pattern="[^ @]*@[^ @]*" placeholder="Email" size="30"><br>
 
-			<textarea id="message" placeholder="Message" style="width: 400px; height: 200px;"></textarea>
+			<textarea id="message" required="required" placeholder="Message" style="width: 400px; height: 200px;"></textarea>
 			<div style="font-size: 0.75em; margin-top: -18px; margin-bottom: 5px; color:#01b6d3;">* required field</div>
-			<input type="button" class="submit_button" id="send" value="Send"></div>
-		</div>
+			<input id="send" type="button" class="submit_button" value="Send"></div>
+			<label id="requestStatus"></label>
+		</form>
 	</div>
 
 	<!-- `current_year` is initialized in client.js -->
